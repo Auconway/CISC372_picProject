@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "stb_image.h": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "stb_image_write.h": "c"
+    },
+    "C_Cpp.default.compilerPath": "/opt/homebrew/bin/gcc-15"
+}
