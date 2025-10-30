@@ -176,11 +176,15 @@ int main(int argc,char** argv){
             pthread_join(threads[i], NULL);
         }
     }
-    stbi_image_free(srcImage.data);
     
     clock_gettime(CLOCK_MONOTONIC, &end);
     time_spent = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1000000000.0;
     
     printf("Took %f seconds\n", time_spent);
+
+    stbi_write_png("output.png", destImage.width, destImage.height, destImage.bpp, destImage.data, destImage.bpp * destImage.width);
+    free(destImage.data);
+    stbi_image_free(srcImage.data);
+
    return 0;
 }
