@@ -1,0 +1,18 @@
+Script started on Thu 30 Oct 2025 10:04:05 AM EDT
+]0;auconway@login00.darwin:~/CISC372_picProject[?1034h[(ea-cisc372-silber:auconway)@login00.darwin CISC372_picProject]$ ls[K[Ksalloc --ntask s=1 --cpus-per-task=4 --partition=standard
+salloc: Granted job allocation 5707542
+salloc: Waiting for resource configuration
+salloc: Nodes r1n03 are ready for job
+]0;auconway@r1n03.darwin:~/CISC372_picProject[?1034h[auconway@r1n03 CISC372_picProject]$ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK [A[auconway@r1n03 CISC372_picProject]$ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TAS[KK
+]0;auconway@r1n03.darwin:~/CISC372_picProject[auconway@r1n03 CISC372_picProject]$ srun imageOMP pic1.jpg edge
+Took 0.484448 seconds
+]0;auconway@r1n03.darwin:~/CISC372_picProject[auconway@r1n03 CISC372_picProject]$ srun imageTHREAD pic1.jpg edge
+Starting convolution with 8 threads.
+Took 0.313448 seconds
+]0;auconway@r1n03.darwin:~/CISC372_picProject[auconway@r1n03 CISC372_picProject]$ exit
+logout
+salloc: Relinquishing job allocation 5707542
+]0;auconway@login00.darwin:~/CISC372_picProject[(ea-cisc372-silber:auconway)@login00.darwin CISC372_picProject]$ exit
+exit
+
+Script done on Thu 30 Oct 2025 10:04:54 AM EDT
