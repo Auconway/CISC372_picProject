@@ -107,9 +107,6 @@ enum KernelTypes GetKernelType(char* type){
 //main:
 //argv is expected to take 2 arguments.  First is the source file name (can be jpg, png, bmp, tga).  Second is the lower case name of the algorithm.
 int main(int argc,char** argv){
-   struct timespec start, end;
-    double time_spent;
-    clock_gettime(CLOCK_MONOTONIC, &start);
     stbi_set_flip_vertically_on_load(0); 
     if (argc!=3) return Usage();
     char* fileName=argv[1];
@@ -133,6 +130,10 @@ int main(int argc,char** argv){
         stbi_image_free(srcImage.data);
         return -1;
     }
+
+    struct timespec start, end;
+    double time_spent;
+    clock_gettime(CLOCK_MONOTONIC, &start);
     pthread_t threads[numThreads];
     ThreadData thread_data[numThreads];
 
